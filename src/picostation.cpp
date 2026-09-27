@@ -12,6 +12,7 @@
 #include "main.pio.h"
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
+#include "power_monitor.h"
 #include "pseudo_atomics.h"
 #include "subq.h"
 #include "values.h"
@@ -239,6 +240,8 @@ void picostation::initHW() {
 
     g_coreReady[0] = false;
     g_coreReady[1] = false;
+
+    initPowerMonitor();
 
     DEBUG_PRINT("ON!\n");
 }

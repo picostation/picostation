@@ -60,6 +60,7 @@ target_sources(
     src/main.cpp
     src/modchip.cpp
     src/picostation.cpp
+    src/power_monitor.cpp
     src/subq.cpp
     src/utils.cpp
     third_party/cueparser/cueparser.c
@@ -86,6 +87,7 @@ pico_generate_pio_header(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/pio/main.pio)
 
 target_link_libraries(
     ${PROJECT_NAME} PRIVATE
+    hardware_adc
     hardware_dma
     hardware_pio
     hardware_pwm
